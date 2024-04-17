@@ -30,3 +30,8 @@ button:active {
   border-color: #1c7ed6;
   color: white;
 }
+
+.layout {
+  margin: auto;
+  background-color: black;
+}
