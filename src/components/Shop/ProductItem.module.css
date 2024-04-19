@@ -1,5 +1,5 @@
 .item h3 {
-  margin: 0.25rem 0;
+  margin: 0.1rem 0;
   font-size: 0.75rem;
 }
 
@@ -11,17 +11,23 @@
 
 .price {
   border-radius: 30px;
-  padding: 0.0725rem 0.75rem;
+  padding: 0.15rem 0.5rem;
   background-color: #d9480f;
   color: white;
   font-size: 0.75rem;
 }
 
 .item p {
+  font-size: 0.75rem;
   color: #343a40;
 }
 
 .actions {
   display: flex;
   justify-content: flex-end;
+  font-size: 0.75rem;
+}
+
+.actions button {
+  padding: 5px;
 }
