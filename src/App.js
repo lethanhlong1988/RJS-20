@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import Layout from "./components/Layout/Layout";
 import Cart from "./components/Cart/Cart";
 import Products from "./components/Shop/Products";
+import Notification from "./components/UI/Notification";
+import { uiActions } from "./store/ui-slice";
 
 function App() {
   const dispatch = useDispatch();
@@ -13,6 +15,13 @@ function App() {
   console.log(notification);
   useEffect(() => {
     const sendCartData = async () => {
+      dispatch(
+        uiActions.showNotification({
+          status: "pending",
+          title: "Sending...",
+          message: "Sending cart data!",
+        }),
+      );
       const response = await fetch(
         "https://rjs-20-1cc19-default-rtdb.firebaseio.com/cart.json",
         {
@@ -30,10 +39,13 @@ function App() {
   }, [cart]);
 
   return (
-    <Layout>
-      {showCart && <Cart />}
-      <Products />
-    </Layout>
+    <Fragment>
+      <Notification />
+      <Layout>
+        {showCart && <Cart />}
+        <Products />
+      </Layout>
+    </Fragment>
   );
 }
 
