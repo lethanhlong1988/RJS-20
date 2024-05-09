@@ -1,10 +1,37 @@
 import { uiActions } from "./ui-slice";
 import { cartActions } from "./cart-slice";
 
+// const fetchData = async () => {
+//   try {
+//     const response = await fetch(
+//       "https://rjs-20-1cc19-default-rtdb.firebaseio.com/cart.json",
+//     );
+//     if (!response.ok) {
+//       throw new Error("Could not fetch cart data!");
+//     }
+
+//     const data = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.error(error);
+//     return null; // hoặc bạn có thể throw error để xử lý ở nơi gọi fetchData()
+//   }
+// };
+
+// const logCartData = async () => {
+//   try {
+//     const cartData = await fetchData();
+//     console.log(cartData);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+// logCartData();
+
 export const fetchCartData = () => {
   return async (dispatch) => {
     const fetchData = async () => {
-      const response = fetch(
+      const response = await fetch(
         "https://rjs-20-1cc19-default-rtdb.firebaseio.com/cart.json",
       );
       if (!response.ok) {

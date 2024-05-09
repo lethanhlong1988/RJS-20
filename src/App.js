@@ -16,19 +16,7 @@ function App() {
   const notification = useSelector((state) => state.ui.notification);
 
   useEffect(() => {
-    // const fetchData = async () => {
-    //   const response = await fetch(
-    //     "https://rjs-20-1cc19-default-rtdb.firebaseio.com/cart.json",
-    //   );
-    //   if (!response.ok) {
-    //     throw new Error("Could not fetch cart data!");
-    //   }
-    //   const data = await response.json();
-    //   return data;
-    // };
-    // const cartData = await fetchData();
-    // console.log(cartData);
-    // dispatch(fetchCartData());
+    dispatch(fetchCartData());
   }, [dispatch]);
 
   useEffect(() => {
